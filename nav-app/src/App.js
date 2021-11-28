@@ -1,10 +1,10 @@
-import { Route, Routes } from 'react-router';
 import logo from './logo.svg';
 import './App.css';
-import NavComponent from "./NavComponent";
-import HeaderComponent from './HeaderComponent';
-import BodyComponent from './BodyComponent';
-import FooterComponent from './FooterComponent';
+import NavbarComponent from './NavbarComponent';
+import TodoComponent from './TodoComponent';
+import PostComponent from './PostComponent';
+import { Route, Routes } from 'react-router';
+
 function App() {
   return (
     // <div className="App">
@@ -24,17 +24,14 @@ function App() {
     //   </header>
     // </div>
     <div>
-      <HeaderComponent/>
-      <NavComponent/>
-      {/* <BodyComponent/> */}
-      <Routes>
-        <Route path={"/todo"} element={<HeaderComponent/>}/>
-        <Route path={"/a"} element={<NavComponent/>}/>
-        <Route path={"/post"} element={<BodyComponent/>}/>
-        
-      </Routes>
-      <FooterComponent/> 
+
+      <NavbarComponent/>
       
+      <Routes>
+        <Route path={"/post"} element={<PostComponent/>}/>
+        <Route path={"/todo"} element={<TodoComponent/>}/>
+
+        </Routes>
     </div>
   );
 }
